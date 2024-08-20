@@ -22,6 +22,12 @@ public class StringCalculatorTest {
     @Test
     public void shouldReturnZeroForEmptyString(){
         int result = calculator.add("");
-        Assert.assertEquals(0,result);
+        assertEquals(0,result);
+    }
+
+    @Test
+    public void shouldReturnTheNumberForSingleInput(){
+        int result = calculator.add("1");
+        assertEquals(1,result);
     }
 }
