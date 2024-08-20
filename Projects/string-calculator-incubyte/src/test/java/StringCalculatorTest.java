@@ -19,26 +19,32 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void shouldReturnZeroForEmptyString(){
+    public void shouldReturnZeroForEmptyString() {
         int result = calculator.add("");
-        assertEquals(0,result);
+        assertEquals(0, result);
     }
 
     @Test
-    public void shouldReturnTheNumberForSingleInput(){
+    public void shouldReturnTheNumberForSingleInput() {
         int result = calculator.add("1");
-        assertEquals(1,result);
+        assertEquals(1, result);
     }
 
     @Test
-    public void shouldReturnSumWhenMultipleCommaSeperatedNumbersAreInput(){
+    public void shouldReturnSumWhenMultipleCommaSeperatedNumbersAreInput() {
         int result = calculator.add("1,2,3");
-        assertEquals(6,result);
+        assertEquals(6, result);
     }
 
     @Test
-    public void shouldReturnSumWhenNewLineDelimiterIsPresentInInput(){
+    public void shouldReturnSumWhenNewLineDelimiterIsPresentInInput() {
         int result = calculator.add("1\n2,3");
-        assertEquals(6,result);
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void shouldReturnSumWhenMultipleDelimiterIsPresentInInput() {
+        int result = calculator.add("//;\n1;23");
+        assertEquals(24, result);
     }
 }

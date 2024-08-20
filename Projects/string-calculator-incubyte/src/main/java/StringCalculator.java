@@ -4,9 +4,10 @@ public class StringCalculator {
         if (input.isEmpty())
             return 0;
         int sum = 0;
-        String[] numbers = input.split(",|\\n");
+        String[] numbers = input.split(",|\\n|//|;");
         for (String number : numbers) {
-            sum += Integer.parseInt(number);
+            if (!number.isEmpty())
+                sum += Integer.parseInt(number);
         }
         return sum;
     }
