@@ -50,6 +50,6 @@ public class StringCalculatorTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowExceptionWhenMultipleDelimiterIsPresentInInput() {
-        int result = calculator.add("//;\n1;-23;-2");
+       calculator.add("//;\n1;-23;-2");
     }
 }
