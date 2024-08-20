@@ -1,9 +1,8 @@
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
 
@@ -29,5 +28,11 @@ public class StringCalculatorTest {
     public void shouldReturnTheNumberForSingleInput(){
         int result = calculator.add("1");
         assertEquals(1,result);
+    }
+
+    @Test
+    public void shouldReturnSumWhenMultipleCommaSeperatedNumbersAreInput(){
+        int result = calculator.add("1,2,3");
+        assertEquals(6,result);
     }
 }
