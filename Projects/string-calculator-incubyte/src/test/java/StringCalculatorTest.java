@@ -35,4 +35,10 @@ public class StringCalculatorTest {
         int result = calculator.add("1,2,3");
         assertEquals(6,result);
     }
+
+    @Test
+    public void shouldReturnSumWhenNewLineDelimiterIsPresentInInput(){
+        int result = calculator.add("1\n2,3");
+        assertEquals(6,result);
+    }
 }
