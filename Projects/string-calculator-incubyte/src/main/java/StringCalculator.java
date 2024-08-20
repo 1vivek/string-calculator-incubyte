@@ -4,10 +4,20 @@ public class StringCalculator {
         if (input.isEmpty())
             return 0;
         int sum = 0;
+        String negativeNumbers = "";
         String[] numbers = input.split(",|\\n|//|;");
         for (String number : numbers) {
-            if (!number.isEmpty())
-                sum += Integer.parseInt(number);
+            if (!number.isEmpty()) {
+                int positiveNum = Integer.parseInt(number);
+                if (positiveNum >= 0) {
+                    sum += positiveNum;
+                } else {
+                    negativeNumbers += number.concat(",");
+                }
+            }
+        }
+        if (!negativeNumbers.isEmpty()) {
+            throw new IllegalArgumentException("negative numbers not allowed " + negativeNumbers.substring(0, negativeNumbers.length() - 1));
         }
         return sum;
     }

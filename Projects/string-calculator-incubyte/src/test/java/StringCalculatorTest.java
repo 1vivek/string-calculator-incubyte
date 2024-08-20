@@ -47,4 +47,9 @@ public class StringCalculatorTest {
         int result = calculator.add("//;\n1;23");
         assertEquals(24, result);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenMultipleDelimiterIsPresentInInput() {
+        int result = calculator.add("//;\n1;-23;-2");
+    }
 }
